@@ -18,6 +18,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/). Versions follow [SemVer
 - HTTP entry point moved into the package (`pbi_mcp.http_cli`); `run_http_server.py` remains as a wrapper.
 
 ### Fixed
+- With `mcp` 2.1 and newer, tool errors reached the model only as "Error executing tool <name>". A small server subclass (`pbi_mcp/mcp_base.py`) now passes the explanatory `ValueError` text through, so messages like "Editing is off: set PBI_MCP_EDIT_ROOT" are visible. Tested on `mcp` 2.0.0 and 2.3.0.
 - Byte-order-mark-less UTF-16 text (the `Report/Layout` part of a `.pbix`) is decoded correctly.
 
 ## [3.1.0]

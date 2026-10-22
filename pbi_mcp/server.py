@@ -11,13 +11,13 @@ from __future__ import annotations
 
 from typing import Any, Literal
 
-from mcp.server.mcpserver import MCPServer
 from mcp.types import ToolAnnotations
 
 from . import audit, compare, editing, insight, layout, metadata, quality
 from .engine import resolve_instance, run_dax_ex
+from .mcp_base import PbiMCPServer
 
-mcp = MCPServer("powerbi-desktop")
+mcp = PbiMCPServer("powerbi-desktop")
 
 
 @mcp.tool()

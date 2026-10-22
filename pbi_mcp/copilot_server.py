@@ -22,13 +22,13 @@ import re
 from pathlib import Path
 from typing import Any, Literal
 
-from mcp.server.mcpserver import MCPServer
 from mcp.types import ToolAnnotations
 
 from . import editing
 from . import server as base
+from .mcp_base import PbiMCPServer
 
-mcp = MCPServer(
+mcp = PbiMCPServer(
     "powerbi-desktop",
     instructions=(
         "Analysis of Power BI Desktop files open on the host PC, plus approved, reversible edits to COPIES of "
