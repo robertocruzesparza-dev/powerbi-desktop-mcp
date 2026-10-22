@@ -58,7 +58,7 @@ class VersionTests(unittest.TestCase):
 
     def test_required_repo_files_exist(self):
         for name in ("LICENSE", "README.md", "CHANGELOG.md", "CONTRIBUTING.md", "SECURITY.md", "PRIVACY.md",
-                     "THIRD-PARTY-NOTICES.md", ".gitignore", "docs/INSTALL.md", "docs/TOOLS.md", "docs/EDITING.md"):
+                     "THIRD-PARTY-NOTICES.md", "CODE_OF_CONDUCT.md", ".gitignore", "docs/INSTALL.md", "docs/TOOLS.md", "docs/EDITING.md"):
             self.assertTrue((ROOT / name).is_file(), name)
 
 

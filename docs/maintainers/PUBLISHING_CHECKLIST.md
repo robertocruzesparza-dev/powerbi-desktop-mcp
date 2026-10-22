@@ -30,9 +30,9 @@ Work top to bottom. Items marked **DECIDE** are yours; nobody can make them for 
 
 - [ ] Create the repo (no README/license from the web UI: you already have them), then `git remote add origin ...` and push `main`.
 - [ ] Settings > General: description, topics (`mcp`, `model-context-protocol`, `power-bi`, `dax`, `tmdl`, `claude`, `copilot`), disable Wiki if unused.
-- [ ] Settings > Security: enable **private vulnerability reporting**, Dependabot alerts, secret scanning + push protection.
+- [ ] Settings > Security: enable **private vulnerability reporting** (SECURITY.md depends on it), Dependabot alerts, secret scanning + push protection.
 - [ ] Settings > Branches: protect `main` (require the CI workflow to pass, require PR review if you have collaborators).
-- [ ] Add **CODE_OF_CONDUCT.md**: on GitHub use *Insights > Community Standards > Add* and pick the Contributor Covenant, then put a real contact method in it. (Not generated here so the wording and contact are yours.)
+- [ ] **CODE_OF_CONDUCT.md** is drafted: fill in `[INSERT CONTACT METHOD]` and delete the comment at the top. Guidance: `docs/maintainers/CODE_OF_CONDUCT_AND_SECURITY_GUIDE.md`. Release gate: `grep -rn "INSERT CONTACT" .` must return nothing.
 - [ ] Optional: `CODEOWNERS`, `SUPPORT.md` (where to ask questions: Discussions vs issues), `FUNDING.yml`.
 - [ ] Check the CI run is green on a fresh clone. CI uses Python 3.10 and 3.12 on Windows; Python 3.13 is not covered (pythonnet support there is unverified).
 
@@ -68,7 +68,6 @@ On a PC that has never seen your files (a spare machine, a VM or a colleague), w
 
 | File | Why |
 |---|---|
-| `CODE_OF_CONDUCT.md` | Expected by GitHub community standards; pick Contributor Covenant and add a contact |
 | `SUPPORT.md` | Where questions go and what response time to expect |
 | `docs/ARCHITECTURE.md` | One page: how the server finds Desktop's engine, why the Copilot build needs a tunnel, how the edit store works. Helps contributors |
 | `docs/TESTED-WITH.md` | Versions you actually tested; update per release |

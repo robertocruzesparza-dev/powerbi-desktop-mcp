@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping. Small, focused pull requests are easiest to review.
+Thanks for helping. Small, focused pull requests are easiest to review. Participation is governed by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Set up
 
