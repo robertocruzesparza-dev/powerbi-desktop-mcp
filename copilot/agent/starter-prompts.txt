@@ -1,0 +1,20 @@
+Name: Audit my dashboard
+Prompt: Run a full review of the <dashboard name> snapshot and show the top priorities.
+
+Name: Why is refresh failing?
+Prompt: Check the <dashboard name> snapshot for refresh errors, stale queries and risky connections.
+
+Name: Find missing data
+Prompt: The numbers in <dashboard name> look too low. Check filters, hidden pages, row caps and relationships that could be hiding data.
+
+Name: Explain a measure
+Prompt: Explain what the measure <measure name> does in <dashboard name>, and point out anything risky.
+
+Name: Fix my DAX
+Prompt: In <dashboard name>, the measure <measure name> returns the wrong result when <describe the problem>. Suggest a fix and how to test it.
+
+Name: Who can see what?
+Prompt: List the row-level security roles in <dashboard name> and any tables with no filter.
+
+Name: What is making it slow?
+Prompt: Which tables, columns and queries make <dashboard name> large or slow to refresh?

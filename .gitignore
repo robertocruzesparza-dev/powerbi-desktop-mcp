@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.coverage
+
+# NEVER commit real Power BI files or data
+*.pbix
+*.pbit
+*.pbip
+*.pbids
+*.rdl
+*.xlsx
+*.csv
+snapshots/
+Power BI Snapshots/
+
+# Editing layer state (backups hold full copies of user files)
+.pbi-changes/
+*.tmp
+
+# Secrets and local settings
+.env
+.env.*
+*.pem
+*.pfx
+launcher.log
+copilot/.local/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

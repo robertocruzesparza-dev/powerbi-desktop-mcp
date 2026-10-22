@@ -1,0 +1,29 @@
+{
+  "name": "powerbi-desktop",
+  "version": "3.2.0",
+  "description": "Fully analyze and diagnose an open Power BI Desktop file: one-call ranked audit (audit_dashboard), the live data model (DAX, relationships, Power Query M with step dependencies), RLS, VertiPaq size, report layout/filters/hidden pages, and deep diagnosis for SQL Server, SharePoint and SharePoint/OneDrive sources -- connection classification, embedded-SQL linting, query-folding analysis, SharePoint anti-patterns, refresh dependencies, mashup trace logs, relationship integrity, table data-quality profiling, and dashboard comparison. Also reviews and edits COPIES of .pbix .pbit .pbip .pbir .pbids .rdl .tmdl files, one approved change at a time, with a one-time approval code, backup, verification and rollback. Bundles skills guiding Claude through analysis and editing.",
+  "author": {
+    "name": "Roberto Cruz Esparza"
+  },
+  "keywords": [
+    "power-bi",
+    "dax",
+    "power-query",
+    "data-modeling",
+    "business-intelligence",
+    "analysis-services",
+    "row-level-security",
+    "vertipaq",
+    "sharepoint",
+    "sql-server",
+    "query-folding",
+    "data-quality",
+    "audit",
+    "tmdl",
+    "pbir",
+    "mcp"
+  ],
+  "homepage": "https://github.com/robertocruzesparza-dev/powerbi-desktop-mcp",
+  "repository": "https://github.com/robertocruzesparza-dev/powerbi-desktop-mcp",
+  "license": "MIT"
+}

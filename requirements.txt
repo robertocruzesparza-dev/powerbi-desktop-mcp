@@ -1,0 +1,4 @@
+mcp[cli]>=2.0.0,<3
+pythonnet>=3.0.0,<4
+pywin32>=306
+psutil>=5.9

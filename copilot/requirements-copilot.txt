@@ -1,0 +1,7 @@
+# Extra packages for the Microsoft 365 Copilot (HTTP) build. Install on top of ../requirements.txt:
+#   python -m pip install -r copilot/requirements-copilot.txt
+-r ../requirements.txt
+uvicorn
+PyJWT[crypto]>=2.8
+# build_package.py only (schema validation):
+jsonschema>=4

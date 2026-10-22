@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.25",
+  "version": "3.2.0",
+  "id": "5b0f6c2e-8a41-4d7b-9c3e-2f6a1d9e7b84",
+  "developer": {
+    "name": "Roberto Cruz Esparza",
+    "websiteUrl": "https://github.com/robertocruzesparza-dev/powerbi-desktop-mcp",
+    "privacyUrl": "https://github.com/robertocruzesparza-dev/powerbi-desktop-mcp/blob/main/PRIVACY.md",
+    "termsOfUseUrl": "https://github.com/robertocruzesparza-dev/powerbi-desktop-mcp/blob/main/LICENSE"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Power BI Desktop",
+    "full": "Power BI Desktop Analyzer"
+  },
+  "description": {
+    "short": "Audit Power BI Desktop files: model, DAX, Power Query, RLS and data sources.",
+    "full": "Ask Microsoft 365 Copilot to fully analyze and diagnose a Power BI Desktop file that is open on the host PC. Runs a one-call ranked audit, reads the data model (tables, columns, DAX measures, relationships, row-level security, VertiPaq size), Power Query (M code, refresh errors, query folding) and the report layout (pages, visuals, filters, hidden pages), with deep diagnosis for SQL Server, SharePoint and SharePoint/OneDrive data sources, data-quality probes and dashboard-to-dashboard comparison. It can also edit COPIES of Power BI files, only after you approve each change and type a one-time code shown on your PC; it never refreshes or publishes anything."
+  },
+  "accentColor": "#1F3A5F",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "powerbiDesktopAnalyzer",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  }
+}

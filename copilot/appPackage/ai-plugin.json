@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "name_for_human": "Power BI Desktop",
+  "namespace": "powerbidesktop",
+  "description_for_human": "Analyze and diagnose Power BI Desktop files open on your PC.",
+  "description_for_model": "Analysis of Power BI Desktop (.pbix) files, plus approved, reversible edits to COPIES of Power BI files (.pbix .pbit .pbip .pbir .pbids .rdl .tmdl) in a dedicated edit folder, on the user's PC: the data model (tables, columns, DAX measures, relationships, row-level security, hierarchies, size), Power Query (M code, refresh errors, query folding, SQL Server / SharePoint / OneDrive connections), the report layout (pages, visuals, filters, hidden pages), data-quality probes and dashboard comparison. Use it whenever the user asks to analyze, audit, diagnose, review or compare a Power BI file, asks why a refresh fails or data is missing or slow, what a dashboard connects to, or who can see what data. Always call find_dashboards first, then audit_dashboard for a full review.",
+  "functions": [],
+  "runtimes": [
+    {
+      "type": "RemoteMCPServer",
+      "auth": {
+        "type": "OAuthPluginVault",
+        "reference_id": "${{PLUGIN_AUTH_CONFIG_ID}}"
+      },
+      "spec": {
+        "url": "${{PLUGIN_SERVER_URL}}"
+      },
+      "run_for_functions": [
+        "*"
+      ]
+    }
+  ]
+}

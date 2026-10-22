@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "powerbi-desktop-mcp"
+dynamic = ["version"]
+description = "MCP server that analyzes Power BI Desktop files and makes approved, reversible edits to copies of Power BI files."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Roberto Cruz Esparza" }]
+keywords = ["mcp", "model-context-protocol", "power-bi", "dax", "power-query", "tmdl", "pbir", "claude", "copilot"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "mcp[cli]>=2.0.0,<3",
+  "pythonnet>=3.0.0,<4; sys_platform == 'win32'",
+  "pywin32>=306; sys_platform == 'win32'",
+  "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+# Only for the Microsoft 365 Copilot (HTTP) server.
+copilot = ["uvicorn", "PyJWT[crypto]>=2.8"]
+# Tests and building the Copilot app package.
+dev = ["uvicorn", "PyJWT[crypto]>=2.8", "jsonschema>=4"]
+
+[project.scripts]
+powerbi-desktop-mcp = "pbi_mcp.__main__:main"
+powerbi-desktop-mcp-http = "pbi_mcp.http_cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pbi_mcp*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "pbi_mcp.__version__" }

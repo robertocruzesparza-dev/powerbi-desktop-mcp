@@ -1,0 +1,1 @@
+Analyzes and debugs your Power BI dashboards from an exported snapshot: ranked audit, data model and DAX, Power Query and refresh errors, SQL Server and SharePoint connections, row-level security, report filters and hidden pages, and data quality. Read-only; works from the latest snapshot, not the live file.
