@@ -22,7 +22,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install
         run: python -m pip install -e ".[dev]"
-      - name: Doctor (non-fatal: Power BI Desktop is not on the runner)
+      - name: Check the console command starts
         run: powerbi-desktop-mcp --version
       - name: Tests
         run: python -m unittest discover -s copilot/tests
