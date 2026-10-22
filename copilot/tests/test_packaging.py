@@ -28,7 +28,7 @@ FORBIDDEN = [
     "Cruz" + "e@", r"\b[a-z0-9]{7,}-\d{4}\.[a-z0-9]+\.devtunnels\.ms",
 ]
 # The maintainer's chosen public contact for conduct reports; allowed only in CODE_OF_CONDUCT.md.
-CONDUCT_CONTACT = "Roberto.Cruzesparza@" + "tusd" + "1.org"
+CONDUCT_CONTACT = "Roberto.Cruzesparza@" + "tu" + "sd1.org"
 SKIP_DIRS = {".git", "__pycache__", "build", "dist", ".venv", "venv"}
 TEXT_SUFFIXES = {".py", ".md", ".json", ".toml", ".yml", ".yaml", ".txt", ".cmd", ".ps1", ".cfg", ".ini"}
 
