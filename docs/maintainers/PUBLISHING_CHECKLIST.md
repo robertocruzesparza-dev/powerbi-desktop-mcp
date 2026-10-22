@@ -32,7 +32,7 @@ Work top to bottom. Items marked **DECIDE** are yours; nobody can make them for 
 - [ ] Settings > General: description, topics (`mcp`, `model-context-protocol`, `power-bi`, `dax`, `tmdl`, `claude`, `copilot`), disable Wiki if unused.
 - [ ] Settings > Security: enable **private vulnerability reporting** (SECURITY.md depends on it), Dependabot alerts, secret scanning + push protection.
 - [ ] Settings > Branches: protect `main` (require the CI workflow to pass, require PR review if you have collaborators).
-- [ ] **CODE_OF_CONDUCT.md** is drafted: fill in `[INSERT CONTACT METHOD]` and delete the comment at the top. Guidance: `docs/maintainers/CODE_OF_CONDUCT_AND_SECURITY_GUIDE.md`. Release gate: `grep -rn "INSERT CONTACT" .` must return nothing.
+- [ ] **CODE_OF_CONDUCT.md** uses a TUSD work address for reports (the maintainer's choice). Consider a project-owned address before launch: a work address is public forever and the employer controls the mailbox. Guidance: `docs/maintainers/CODE_OF_CONDUCT_AND_SECURITY_GUIDE.md`. 
 - [ ] Optional: `CODEOWNERS`, `SUPPORT.md` (where to ask questions: Discussions vs issues), `FUNDING.yml`.
 - [ ] Check the CI run is green on a fresh clone. CI uses Python 3.10 and 3.12 on Windows; Python 3.13 is not covered (pythonnet support there is unverified).
 

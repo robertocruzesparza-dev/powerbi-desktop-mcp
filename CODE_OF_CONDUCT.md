@@ -1,9 +1,3 @@
-<!--
-DRAFT: replace [INSERT CONTACT METHOD] (one place, under "Enforcement") with a private way to reach the
-enforcers: a dedicated project email address, or a GitHub private channel. Delete this comment when done.
-See docs/maintainers/CODE_OF_CONDUCT_AND_SECURITY_GUIDE.md.
--->
-
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
@@ -42,7 +36,7 @@ This Code of Conduct applies within all community spaces, and also applies when 
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at Roberto.Cruzesparza@tusd1.org. All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the reporter of any incident.
 

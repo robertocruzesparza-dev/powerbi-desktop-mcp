@@ -27,6 +27,8 @@ FORBIDDEN = [
     r"(?<![A-Za-z])tus" + "d", "405" + "842", "bc7050" + "e0", "OneDrive" + " - ", "ALE Test" + "ing", "Tuc" + "son",
     "Cruz" + "e@", r"\b[a-z0-9]{7,}-\d{4}\.[a-z0-9]+\.devtunnels\.ms",
 ]
+# The maintainer's chosen public contact for conduct reports; allowed only in CODE_OF_CONDUCT.md.
+CONDUCT_CONTACT = "Roberto.Cruzesparza@" + "tusd" + "1.org"
 SKIP_DIRS = {".git", "__pycache__", "build", "dist", ".venv", "venv"}
 TEXT_SUFFIXES = {".py", ".md", ".json", ".toml", ".yml", ".yaml", ".txt", ".cmd", ".ps1", ".cfg", ".ini"}
 
@@ -95,6 +97,8 @@ class PrivateDataTests(unittest.TestCase):
         hits = []
         for path in tracked_text_files():
             text = path.read_text(encoding="utf-8", errors="ignore")
+            if path.name == "CODE_OF_CONDUCT.md":  # the one deliberate public contact
+                text = text.replace(CONDUCT_CONTACT, "")
             for pattern in FORBIDDEN:
                 match = re.search(pattern, text, re.I)
                 if match:
