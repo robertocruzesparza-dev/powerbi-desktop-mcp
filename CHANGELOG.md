@@ -4,6 +4,23 @@ Format: [Keep a Changelog](https://keepachangelog.com/). Versions follow [SemVer
 
 ## [Unreleased]
 
+## [4.0.0]
+
+Merges the standalone "powerbi-desktop-plus" work into this repository: one server, 58 tools, 11 skills.
+
+### Added
+- **Offline project engine** (`pbi_mcp/plus`, 25 tools) for saved `.pbip` projects, no Power BI Desktop needed: lossless TMDL parser/editor, PBIR report reader/writer, DAX reference scanner, whole-project validation (DAX102/DAX103, TMDL, PBIR rules), best-practice scan, DAX lint, measure dependency graph, unused-field finder, source classification, Power Query diagnosis, Markdown documentation, project diff, new-project scaffold, project copy.
+- **Plan/apply editing** (`plan_model_change`, `plan_report_change`, `apply_change`, `list_project_backups`, `restore_backup`): diff with predicted new errors, backup outside the project, atomic write, validation gate, automatic rollback, restore preview. Operations: measures, calculated columns, properties, relationships, RLS roles, M sources, shared expressions, rename and move (rewriting DAX, relationships, RLS and report visuals), pages, visuals, alt text, themes.
+- **Live measure writes** to an open Desktop file through the Tabular Object Model: `validate_dax_live`, `upsert_measure_live`, `delete_measure_live`, `undo_live_change` (dry run first, single-use confirm token, stale-undo protection, dynamic formats preserved).
+- `plugin_status` health tool; `PBI_MCP_READONLY` and `PBI_MCP_BACKUP_DIR` switches.
+- Six new skills (`powerbi-project-authoring`, `powerbi-dax-authoring`, `powerbi-model-design`, `powerbi-performance-tuning`, `powerbi-troubleshooting`, `powerbi-documentation`), a skill registry, and upgraded versions of the five existing skills.
+- Multi-client support: `gemini-extension.json`, `GEMINI.md`, `AGENTS.md`, `.github/copilot-instructions.md`, `docs/clients/` configs, `scripts/install_skills.py`, `docs/CLIENTS.md`.
+- 54 pytest tests for the new engine (`tests/`), run in CI; `evals/` trigger cases and tasks; `docs/RESEARCH.md`.
+
+### Changed
+- The 3.2.0 file-editing tools (`review_file`, `propose_change`, `finish_change`) stay for `.pbix`, `.pbit`, `.rdl`, `.pbids` and loose files; skills now route between them and the project engine.
+- The Microsoft 365 Copilot (HTTP) build is unchanged: it does not expose the new write tools.
+
 ## [3.2.0]
 
 ### Added

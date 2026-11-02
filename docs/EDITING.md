@@ -45,3 +45,18 @@ Backups and the audit journal live in `<PBI_MCP_EDIT_ROOT>\.pbi-changes\`. The j
 ## What it cannot do
 
 Refresh schedules, credentials and privacy levels, publishing, tenant settings, and re-publishing `.rdl` files are manual. The assistant should give you the exact steps.
+
+## Two editing layers (4.0.0)
+
+| Layer | Use for | Approval | Tools |
+|---|---|---|---|
+| File editing (3.2.0) | `.pbix`/`.pbit` report layer, `.rdl`, `.pbids`, loose `.tmdl` or PBIR `.json`, exact text replacement | one-time 6-digit code read from the server console | `review_file`, `propose_change`, `finish_change` |
+| Project engine (4.0.0) | saved `.pbip` projects: model and report operations | the assistant shows the diff and waits for your explicit yes in chat | `plan_model_change`, `plan_report_change`, `apply_change`, `restore_backup` |
+| Live measures (4.0.0) | one measure in an open Desktop file | dry run, then a single-use `confirm_token` | `upsert_measure_live`, `delete_measure_live`, `undo_live_change` |
+
+Project-engine safety contract: a plan writes nothing and reports `predicted_new_errors` from a trial apply on a
+temporary copy; `apply_change` takes a backup outside the project (`%LOCALAPPDATA%\powerbi-desktop-mcp\backups`, or
+`PBI_MCP_BACKUP_DIR`), writes atomically, validates the whole project and rolls back automatically if validation
+finds a new blocking problem; `restore_backup` previews until `confirm=True` and refuses if files changed since.
+`PBI_MCP_EDIT_ROOT` limits every write to one folder; `PBI_MCP_READONLY=1` disables them all. Desktop does not
+hot-reload external edits: close the project before applying, or reopen it afterwards.

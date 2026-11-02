@@ -1,12 +1,30 @@
 ---
 name: powerbi-full-analysis
-description: Use when analyzing, auditing, diagnosing, or reviewing a Power BI Desktop file with the powerbi-desktop plugin's tools -- triggers on "analyze this Power BI file", "audit the data model", "fully analyze my dashboard", "is this dashboard efficient/correct/effective", "why is refresh slow", "why is data missing", "check SQL / SharePoint / OneDrive connections", "does this fold", "what does this file connect to", "who can see what data", "compare these two dashboards", or "diagnose Power Query problems" whenever the powerbi-desktop MCP tools (audit_dashboard, list_open_files, list_power_query, etc.) are available.
-version: 3.1.0
+description: "Analyzes a Power BI Desktop file, or a saved .pbip project, end to end with the powerbi-desktop MCP tools: data model, DAX, Power Query, connections (SQL Server, SharePoint, OneDrive), row-level security, report layout, and refresh health, returning one ranked list of findings. Use when asked to analyze, audit, diagnose, or review a Power BI file or dashboard, to judge whether an existing Power BI model is correct and efficient, find out why refresh is slow or data is missing, check what a dashboard connects to or who can see what, check query folding, or compare two dashboards. Do NOT use for designing a new model from scratch (use data-modeling) or for changing a file (use powerbi-approved-editing)."
+metadata:
+  version: "2.0"
 ---
 
 # Power BI Desktop full analysis
 
-The powerbi-desktop plugin exposes 30 tools. Three kinds:
+Requires the `powerbi-desktop` MCP plugin (v4: 30 read-only analysis tools plus project and edit tools; Power BI Desktop must be running with the file open for live tools). To act on findings, hand off to `powerbi-approved-editing`; for file internals see `powerbi-file-formats`.
+
+## No Desktop? Analyze the saved project
+
+When the user has a `.pbip` project (or can Save as one), most of this skill works offline:
+
+| Need | Offline tool |
+|------|--------------|
+| overview and health | `inspect_project`, `validate_project` |
+| model and DAX review | `read_model_tmdl`, `best_practice_scan`, `measure_dependencies`, `lint_dax` |
+| connections, SQL, folding, SharePoint, refresh graph | `analyze_project_queries` (aspect = connections, sql, folding, sharepoint, dependencies, all) |
+| report content | `get_report_definition` |
+| unused fields | `find_unused_fields_project` |
+| compare two versions | `diff_projects` |
+
+Offline results are static: they read saved text, not engine statistics, row counts, or trace logs. Say so, and use the live tools below when the file is open.
+
+The live tools: the plugin exposes these kinds:
 
 - **Live tools** (Power BI Desktop must be open with the file loaded; first
   argument is `instance`): everything except the four below.
@@ -165,6 +183,10 @@ SharePoint/OneDrive files**. For questions about loading/refresh/connections:
 - Leftover Query Diagnostics queries (`Diagnostics_*`,
   `<Query>_<Step>_Detailed_<timestamp>`) are excluded from findings; if the
   user's model contains them, suggest deleting them before publishing.
+
+## Best-practice scan
+
+`best_practice_scan(target)` accepts an open file name or a project path and returns rule-tagged findings (relationships, keys, date table, auto date/time, DAX smells, formats, RLS). Include its summary in the write-up; treat each finding as a lead with its stated reason.
 
 ## "Fully analyzed" checklist
 

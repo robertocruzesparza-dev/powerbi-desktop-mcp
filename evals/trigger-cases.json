@@ -1,0 +1,134 @@
+{
+ "powerbi-dax-authoring": {
+  "should": [
+   "Write a measure for year-over-year sales growth",
+   "Why does my percent of total measure show 100% on every row?",
+   "Convert this IFERROR measure to something faster",
+   "Explain what this CALCULATE with ALLSELECTED does",
+   "Build a running total of enrollment by month in DAX",
+   "Fix: A single value for column cannot be determined",
+   "Create a top 5 products measure",
+   "Review all DAX in this model for problems"
+  ],
+  "should_not": [
+   "Why is my SharePoint refresh failing",
+   "Make a new page with a bar chart",
+   "Rename this table and update the visuals",
+   "Document every measure in the dashboard",
+   "Which data gateway do I need",
+   "Apply our brand colors to the report",
+   "Package the plugin for Copilot Studio",
+   "Draw a star schema diagram for a warehouse"
+  ]
+ },
+ "powerbi-project-authoring": {
+  "should": [
+   "Create a new Power BI report project with a sales card",
+   "Add a slicer for Region to the Overview page",
+   "Apply these brand colors to the report theme",
+   "Add an RLS role for the West region",
+   "Rename measure Total Sales to Revenue everywhere",
+   "Move the Order Count measure to the Region table",
+   "Add alt text to every visual in the report",
+   "Script a change to hide all visual-level filters"
+  ],
+  "should_not": [
+   "Why is the visual blank",
+   "Is this model a good star schema",
+   "How many tables are in this dashboard",
+   "Explain this DAX to me",
+   "Make this dashboard load faster",
+   "Summarize the contents of this PDF",
+   "Create a chart in matplotlib",
+   "Publish the report to the workspace"
+  ]
+ },
+ "powerbi-troubleshooting": {
+  "should": [
+   "My visual is blank after the update",
+   "The total does not match the sum of the rows",
+   "Refresh keeps failing with a credentials error",
+   "Some students are missing from the report",
+   "The file shows a repair prompt when I open the project",
+   "Why is this number different from the SQL count",
+   "Row level security shows the wrong data for a user",
+   "The dashboard data is stale after yesterday's edit"
+  ],
+  "should_not": [
+   "Write a measure for margin",
+   "Create a new project from scratch",
+   "Add a page to the report",
+   "Document the model",
+   "Design a date table",
+   "Apply a theme",
+   "Compare two versions of the report",
+   "Package for Copilot"
+  ]
+ },
+ "powerbi-performance-tuning": {
+  "should": [
+   "Make this dashboard faster",
+   "The file is 800 MB; shrink it",
+   "Refresh takes 40 minutes",
+   "Which columns are making the model big",
+   "Too many visuals on a page slow loading",
+   "Is query folding broken in this model",
+   "Speed up this slow measure",
+   "Prepare the model for 500 users"
+  ],
+  "should_not": [
+   "Why is the total wrong",
+   "Add a measure",
+   "Explain relationships",
+   "Create a project",
+   "Write documentation",
+   "Fix a missing student",
+   "Rename a column",
+   "Set up row level security"
+  ]
+ },
+ "powerbi-model-design": {
+  "should": [
+   "Is this model a proper star schema",
+   "How should I add a date table",
+   "Should this relationship be bidirectional",
+   "Design the model for enrollment and assessment facts",
+   "How do I set up RLS by school",
+   "Where should measures live",
+   "How do I model many-to-many between students and programs",
+   "Restructure these three flat tables"
+  ],
+  "should_not": [
+   "Write a YTD measure",
+   "Why is the visual blank",
+   "Make refresh faster",
+   "Create a theme",
+   "Diff two projects",
+   "Warehouse design in Snowflake",
+   "Fix a DAX error",
+   "Open the file in Desktop"
+  ]
+ },
+ "powerbi-documentation": {
+  "should": [
+   "Document this dashboard for handover",
+   "List every measure with its DAX",
+   "What changed between version 1 and version 2 of the report",
+   "Create a data dictionary for the model",
+   "Show where each table gets its data",
+   "Prepare an audit trail of the edits",
+   "Summarize what each report page shows",
+   "Generate model documentation as markdown"
+  ],
+  "should_not": [
+   "Audit this dashboard for problems",
+   "Fix the wrong total",
+   "Add a measure",
+   "Speed it up",
+   "Design a star schema",
+   "Rename a field",
+   "Write a README for my Python app",
+   "Document a REST API"
+  ]
+ }
+}

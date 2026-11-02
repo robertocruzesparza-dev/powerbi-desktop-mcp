@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "powerbi-desktop": {
+      "type": "local",
+      "command": "powerbi-desktop-mcp",
+      "args": [],
+      "tools": ["*"],
+      "env": {
+        "PBI_MCP_EDIT_ROOT": "C:\\PowerBI-Copies"
+      }
+    }
+  }
+}

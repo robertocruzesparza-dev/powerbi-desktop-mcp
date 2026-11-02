@@ -404,6 +404,12 @@ def finish_change(change_id: str, action: Literal["apply", "rollback"], approval
     return editing.finish(change_id, action, approval_code)
 
 
+# v4: offline PBIP/TMDL/PBIR engine, plan/apply edits and live measure writes (25 tools).
+from .plus import tools as _plus_tools  # noqa: E402
+
+_plus_tools.register(mcp)
+
+
 def main() -> None:
     mcp.run()
 

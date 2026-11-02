@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
   "manifestVersion": "1.25",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "id": "5b0f6c2e-8a41-4d7b-9c3e-2f6a1d9e7b84",
   "developer": {
     "name": "Roberto Cruz Esparza",

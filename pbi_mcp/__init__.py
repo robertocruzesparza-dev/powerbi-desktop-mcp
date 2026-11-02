@@ -1,3 +1,3 @@
-"""Power BI Desktop MCP server: read-only analysis plus approved, reversible edits."""
+"""Power BI Desktop MCP server: analysis, project authoring and approved, reversible edits."""
 
-__version__ = "3.2.0"
+__version__ = "4.0.0"

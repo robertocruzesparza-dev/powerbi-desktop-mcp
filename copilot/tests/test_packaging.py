@@ -85,7 +85,7 @@ class CommandLineTests(unittest.TestCase):
 class StdioServerTests(unittest.TestCase):
     def test_edit_tools_are_registered_with_the_right_hints(self):
         tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
-        self.assertEqual(len(tools), 33)
+        self.assertEqual(len(tools), 58)  # 30 analysis + 3 file-editing + 25 project/edit tools (pbi_mcp.plus)
         for name, read_only in (("review_file", True), ("propose_change", False), ("finish_change", False)):
             self.assertIn(name, tools)
             self.assertIs(tools[name].annotations.read_only_hint, read_only, name)

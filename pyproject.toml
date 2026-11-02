@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "powerbi-desktop-mcp"
 dynamic = ["version"]
-description = "MCP server that analyzes Power BI Desktop files and makes approved, reversible edits to copies of Power BI files."
+description = "MCP server and skills that let Claude, Gemini or GitHub Copilot analyze, author, edit, troubleshoot and optimize Power BI Desktop files and projects, with approved, reversible edits."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Roberto Cruz Esparza" }]
-keywords = ["mcp", "model-context-protocol", "power-bi", "dax", "power-query", "tmdl", "pbir", "claude", "copilot"]
+keywords = ["mcp", "model-context-protocol", "power-bi", "dax", "power-query", "tmdl", "pbir", "claude", "gemini", "copilot", "pbip"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
@@ -33,7 +33,7 @@ dependencies = [
 # Only for the Microsoft 365 Copilot (HTTP) server.
 copilot = ["uvicorn", "PyJWT[crypto]>=2.8"]
 # Tests and building the Copilot app package.
-dev = ["uvicorn", "PyJWT[crypto]>=2.8", "jsonschema>=4"]
+dev = ["uvicorn", "PyJWT[crypto]>=2.8", "jsonschema>=4", "pytest>=7"]
 
 [project.scripts]
 powerbi-desktop-mcp = "pbi_mcp.__main__:main"

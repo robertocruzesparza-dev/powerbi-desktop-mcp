@@ -44,7 +44,7 @@ directly with the file (so you can feed it straight into `get_report_layout`
 without hunting the path down yourself).
 
 
-## Editing tools (3)
+## File-editing tools (3)
 
 Available in the stdio server and in the Microsoft 365 Copilot build. Full rules: [EDITING.md](EDITING.md).
 
@@ -53,6 +53,39 @@ Available in the stdio server and in the Microsoft 365 Copilot build. Full rules
 | `review_file` | yes | Read the text of a `.pbip` `.pbir` `.pbids` `.rdl` `.tmdl` file, a PBIR `.json`, or a text part of a `.pbix`/`.pbit`. Credentials are shown as `[REDACTED]` |
 | `propose_change` | no (writes only a pending record) | Validate an exact-match replacement on a copy and return a diff, affected objects and risk. Changes nothing |
 | `finish_change` | no | `apply` (backup, write only the approved edit, verify, auto-restore on failure) or `rollback`. Needs a one-time code shown in the server console |
+
+## Project and edit tools (25, added in 4.0.0)
+
+These work on saved `.pbip` projects without Power BI Desktop, except the four `*_live` tools. Writes follow the
+plan, approve, apply, restore contract in [EDITING.md](EDITING.md). They are not part of the Microsoft 365 Copilot build.
+
+| Tool | Writes? | Description |
+|---|---|---|
+| `plugin_status` | no | Version, runtime, safety switches and which layers work now |
+| `find_pbip_projects` | no | Find `.pbip` projects, newest first |
+| `inspect_project` | no | One-call overview of a project |
+| `read_model_tmdl` | no | Tables, columns, measures (DAX), hierarchies, partitions, roles from TMDL |
+| `get_report_definition` | no | PBIR pages and visuals with fields, positions, alt text |
+| `validate_project` | no | Whole-project consistency check (parse, names, references, report fields) |
+| `best_practice_scan` | no | Model best-practice findings |
+| `lint_dax` | no | Static DAX check and anti-patterns |
+| `measure_dependencies` | no | Measure and column dependency graph |
+| `find_unused_fields_project` | no | Fields nothing uses |
+| `classify_sources_project` | no | Source type per table (secrets redacted) |
+| `analyze_project_queries` | no | M diagnosis: connections, SQL, folding, steps |
+| `document_project` | files | Markdown documentation of a project |
+| `diff_projects` | no | Compare two projects |
+| `create_project` | files | New project with a self-contained sample |
+| `copy_project` | files | Copy a project so edits happen on a copy |
+| `plan_model_change` | no | Plan one model edit; returns diff and predicted new errors |
+| `plan_report_change` | no | Plan one report edit |
+| `apply_change` | files | Apply an approved plan with backup, validation and rollback |
+| `list_project_backups` | no | List automatic backups |
+| `restore_backup` | files | Preview, then restore, a backup |
+| `validate_dax_live` | no | Compile a candidate measure in the open model without saving |
+| `upsert_measure_live` | live | Create or change a measure in an open file (dry run, token) |
+| `delete_measure_live` | live | Delete a measure (lists dependants first) |
+| `undo_live_change` | live | Revert a live change before the file is saved |
 
 ## Known limitations
 
