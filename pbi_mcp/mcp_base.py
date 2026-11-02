@@ -31,7 +31,7 @@ class PbiMCPServer(MCPServer):
             if UnexpectedToolError is not None and isinstance(exc, UnexpectedToolError) and isinstance(exc.__cause__, ValueError):
                 raise ToolError(_with_hint(name, str(exc.__cause__))) from exc.__cause__
             raise
-        _learn(name, not getattr(result, "isError", False), started, None)
+        _learn(name, not (getattr(result, "is_error", False) or getattr(result, "isError", False)), started, None)
         return result
 
 
