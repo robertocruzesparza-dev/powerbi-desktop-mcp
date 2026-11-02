@@ -4,12 +4,13 @@ An [MCP](https://modelcontextprotocol.io/) server that lets an AI assistant **an
 
 > Not affiliated with or endorsed by Microsoft. "Power BI", "Microsoft 365 Copilot" and "Copilot Studio" are trademarks of Microsoft Corporation.
 
-## What you get (v4.0.0: 58 tools, 11 skills)
+## What you get (v4.1.0: 65 tools, 12 skills)
 
 - **Analyze an open file** (30 read-only tools): live data model, DAX, relationships, row-level security, VertiPaq size, Power Query M with step dependencies, refresh health, report layout and filters, and deep checks for SQL Server, SharePoint and OneDrive sources. `audit_dashboard` runs 15 checks and returns one ranked list.
 - **Work on saved `.pbip` projects without Desktop** (25 tools): read and validate TMDL and PBIR, best-practice scan, DAX lint, dependency graph, unused fields, query diagnosis, generated documentation, project diff, and scaffolding of new projects.
 - **Author and edit safely**: plan, diff, approve, apply with backup, validation gate and automatic rollback, for measures, columns, relationships, RLS, M sources, renames (rewriting DAX and visuals), pages, visuals, alt text and themes. Edit one measure live in an open file with dry-run tokens and undo. Approved edits of copies of `.pbix`, `.pbit`, `.pbir`, `.pbids`, `.rdl` and `.tmdl`. See [docs/EDITING.md](docs/EDITING.md).
-- **11 agent skills** for analysis, troubleshooting, performance, DAX, model design, project authoring, documentation, editing rules and file formats (`skills/`).
+- **Learns from use** (7 tools): remembers fixes for errors it has seen, reports where the tools fail, and syncs and searches your public [Power BI Knowledge Base](https://github.com/robertocruzesparza-dev/Power_Bi_Knowledge_Base). Local only; proposes improvements for a human to review, never edits itself. See [docs/SELF-IMPROVEMENT.md](docs/SELF-IMPROVEMENT.md).
+- **12 agent skills** for analysis, troubleshooting, performance, DAX, model design, project authoring, documentation, editing rules and file formats (`skills/`).
 - **Works with Claude, Gemini CLI and GitHub Copilot**, plus a **Microsoft 365 Copilot** build in [`copilot/`](copilot/README.md). See [docs/CLIENTS.md](docs/CLIENTS.md).
 
 ## Requirements
@@ -56,6 +57,7 @@ The server runs on your machine and reads your Power BI models. What you ask the
 |---|---|
 | [docs/INSTALL.md](docs/INSTALL.md) | Install, client config, environment variables, troubleshooting |
 | [docs/TOOLS.md](docs/TOOLS.md) | Every tool, and what each can and cannot prove |
+| [docs/SELF-IMPROVEMENT.md](docs/SELF-IMPROVEMENT.md) | The learning loop: what is stored, knowledge-base sync, improvement report |
 | [docs/CLIENTS.md](docs/CLIENTS.md) | Claude, Gemini CLI and GitHub Copilot setup and verification status |
 | [docs/RESEARCH.md](docs/RESEARCH.md) | How Power BI Desktop works, capability matrix, known limits |
 | [docs/EDITING.md](docs/EDITING.md) | The change protocol, supported formats, safety rules |

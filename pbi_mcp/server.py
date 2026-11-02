@@ -409,6 +409,11 @@ from .plus import tools as _plus_tools  # noqa: E402
 
 _plus_tools.register(mcp)
 
+# v4.1: local learning loop (usage and error patterns, lessons, knowledge-base sync and search).
+from .plus import learning_tools as _learning_tools  # noqa: E402
+
+_learning_tools.register(mcp)
+
 
 def main() -> None:
     mcp.run()

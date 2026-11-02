@@ -1,7 +1,7 @@
 {
   "name": "powerbi-desktop",
-  "version": "4.0.0",
-  "description": "Analyze, author, edit, troubleshoot and optimize Power BI Desktop files and .pbip projects (58 MCP tools, 11 skills) with approved, reversible edits.",
+  "version": "4.1.0",
+  "description": "Analyze, author, edit, troubleshoot and optimize Power BI Desktop files and .pbip projects (65 MCP tools, 12 skills) with approved, reversible edits.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "powerbi-desktop": {

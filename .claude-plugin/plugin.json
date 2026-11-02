@@ -1,7 +1,7 @@
 {
   "name": "powerbi-desktop",
-  "version": "4.0.0",
-  "description": "Complete Power BI toolkit for AI assistants (58 tools, 11 skills): one-call ranked audit of an open Desktop file, live model/DAX/Power Query/RLS/VertiPaq/report analysis, an offline engine for saved .pbip projects (TMDL + PBIR: read, validate, best-practice scan, lint DAX, dependency graph, unused fields, documentation, diff, scaffold new projects), plan/apply edits with diff, backup, validation gate and automatic rollback, live measure writes with dry-run tokens and undo, plus approved edits of copies of .pbix .pbit .pbir .pbids .rdl .tmdl. Works with Claude, Gemini CLI and GitHub Copilot; a Microsoft 365 Copilot build is included.",
+  "version": "4.1.0",
+  "description": "Complete Power BI toolkit for AI assistants (65 tools, 12 skills): one-call ranked audit of an open Desktop file, live model/DAX/Power Query/RLS/VertiPaq/report analysis, an offline engine for saved .pbip projects (TMDL + PBIR: read, validate, best-practice scan, lint DAX, dependency graph, unused fields, documentation, diff, scaffold new projects), plan/apply edits with diff, backup, validation gate and automatic rollback, live measure writes with dry-run tokens and undo, plus approved edits of copies of .pbix .pbit .pbir .pbids .rdl .tmdl. Works with Claude, Gemini CLI and GitHub Copilot; a local learning loop (lessons from resolved errors, usage report, public Power BI Knowledge Base sync and search) improves it with use. A Microsoft 365 Copilot build is included.",
   "author": {
     "name": "Roberto Cruz Esparza"
   },

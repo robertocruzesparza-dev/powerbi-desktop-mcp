@@ -14,6 +14,7 @@ The `powerbi` coordinator reads this file, then loads only the specialists a req
 | `powerbi-approved-editing` | The approval, backup, verify, rollback rules that every write follows | `apply_change`, `restore_backup`, `*_live` tools |
 | `powerbi-file-formats` | What each file type holds and how safely it can be edited | none |
 | `powerbi-documentation` | Data dictionary, measure catalog, lineage, handover docs | `document_project`, `diff_projects` |
+| `powerbi-self-improvement` | Error lookup, recording verified fixes, Knowledge Base search, improvement report | `get_lessons`, `record_lesson`, `search_knowledge`, `sync_knowledge_base`, `improvement_report` |
 | `copilot-powerbi-agent` | Packaging the tools for Microsoft 365 Copilot or Copilot Studio | none |
 
 ## Layers, from safest to riskiest

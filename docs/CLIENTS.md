@@ -42,7 +42,7 @@ VS Code: copy [docs/clients/vscode-mcp.json](clients/vscode-mcp.json) to `.vscod
 
 ## Verification status (be aware)
 
-- Verified here: the server starts over stdio and lists all 58 tools through the MCP protocol; every config file in
+- Verified here: the server starts over stdio and lists all 65 tools through the MCP protocol; every config file in
   `docs/clients/` and `gemini-extension.json` is valid JSON and is checked by tests; the skills installer is tested.
 - Not verified here: a live session in Gemini CLI or GitHub Copilot. Their file locations and config keys follow the
   vendors' published documentation as of this release; if a client has changed them, adjust the path and keep the

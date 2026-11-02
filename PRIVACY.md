@@ -12,6 +12,10 @@ With Power BI Desktop open: model metadata (table, column and measure names, DAX
 - **Microsoft 365 Copilot build.** Results travel through the HTTPS tunnel you create to Microsoft 365 Copilot. You are responsible for the tunnel, the Entra app and the user allow-list. See `copilot/README.md`.
 - **Nowhere else.** This project sends nothing to its authors.
 
+## Learning log (on by default, local only)
+
+The server keeps a small log on your PC (`%LOCALAPPDATA%\powerbi-desktop-mcp\learning`): per tool call the tool name, success, duration and a **redacted** error pattern (paths, quoted names, ids, emails and secrets removed), plus short lessons the assistant records after fixing a problem. It never stores tool arguments, results or data, and it is never sent anywhere; this is not telemetry. `sync_knowledge_base`, only when called, downloads text files from the allow-listed public GitHub repository. Turn the log off with `PBI_MCP_LEARN=0`; delete it with the `forget_learning` tool. See `docs/SELF-IMPROVEMENT.md`.
+
 ## What it writes
 
 - Setup logs and the private Python environment in `%LOCALAPPDATA%\powerbi-desktop-mcp` (plugin launcher only).

@@ -669,7 +669,7 @@ def test_install_skills_copies_every_skill(tmp_path):
     import install_skills
     for target in ("claude", "gemini", "copilot"):
         lines = install_skills.install(target, str(tmp_path / target))
-        assert len(lines) == 11
+        assert len(lines) == 12
     assert (tmp_path / "copilot" / ".github" / "skills" / "powerbi" / "SKILL.md").is_file()
     assert (tmp_path / "gemini" / ".gemini" / "skills" / "POWERBI-REGISTRY.md").is_file()
     assert install_skills.install("claude", str(tmp_path / "dry"), dry_run=True) and not (tmp_path / "dry").exists()
@@ -688,5 +688,5 @@ def test_server_exposes_all_tools_over_the_registry():
     import asyncio
     from pbi_mcp import server
     names = [t.name for t in asyncio.run(server.mcp.list_tools())]
-    assert len(names) == len(set(names)) == 58
+    assert len(names) == len(set(names)) == 65
     assert {"audit_dashboard", "propose_change", "plan_model_change", "upsert_measure_live"} <= set(names)

@@ -87,6 +87,20 @@ plan, approve, apply, restore contract in [EDITING.md](EDITING.md). They are not
 | `delete_measure_live` | live | Delete a measure (lists dependants first) |
 | `undo_live_change` | live | Revert a live change before the file is saved |
 
+## Learning tools (7, added in 4.1.0)
+
+Local learning loop; see [SELF-IMPROVEMENT.md](SELF-IMPROVEMENT.md). Not part of the Microsoft 365 Copilot build.
+
+| Tool | Writes? | Description |
+|---|---|---|
+| `learning_status` | no | Switch state, data location, counts, knowledge-base cache |
+| `get_lessons` | no | Past fixes for an error or topic (notes, not instructions) |
+| `record_lesson` | local | Save a verified problem and fix, redacted |
+| `sync_knowledge_base` | local + network | Download the allow-listed public knowledge base to a local cache |
+| `search_knowledge` | no | Search the cached knowledge base by heading and words |
+| `improvement_report` | no | Error rates, frequent redacted errors, suggestions, draft issue text |
+| `forget_learning` | local delete | Delete the learning data (previews until `confirm=True`) |
+
 ## Known limitations
 
 - Only reads the currently-loaded data as visible to the AS engine -- it

@@ -8,6 +8,7 @@ which already pass the message through, this class behaves exactly like `MCPServ
 """
 from __future__ import annotations
 
+import time
 from typing import Any
 
 from mcp.server.mcpserver import MCPServer
@@ -20,9 +21,33 @@ except ImportError:  # older mcp: ValueError messages already reach the client
 
 class PbiMCPServer(MCPServer):
     async def call_tool(self, *args: Any, **kwargs: Any) -> Any:
+        name = str(args[0] if args else kwargs.get("name", "?"))
+        started = time.monotonic()
         try:
-            return await super().call_tool(*args, **kwargs)
+            result = await super().call_tool(*args, **kwargs)
         except Exception as exc:  # noqa: BLE001 - re-raised unchanged unless it is a deliberate ValueError
+            cause = exc.__cause__ if (UnexpectedToolError is not None and isinstance(exc, UnexpectedToolError)) else exc
+            _learn(name, False, started, str(cause) if isinstance(cause, (ValueError, ToolError or ValueError)) else type(cause).__name__)
             if UnexpectedToolError is not None and isinstance(exc, UnexpectedToolError) and isinstance(exc.__cause__, ValueError):
-                raise ToolError(str(exc.__cause__)) from exc.__cause__
+                raise ToolError(_with_hint(name, str(exc.__cause__))) from exc.__cause__
             raise
+        _learn(name, not getattr(result, "isError", False), started, None)
+        return result
+
+
+def _learn(name: str, ok: bool, started: float, error: str | None) -> None:
+    """Record the call in the local learning log (tool name, timing, redacted error only). Never raises."""
+    try:
+        from .plus import learning
+        learning.observe(name, ok, (time.monotonic() - started) * 1000, error)
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def _with_hint(name: str, message: str) -> str:
+    try:
+        from .plus import learning
+        hint = learning.hint_for(name, message)
+        return f"{message}\n{hint}" if hint else message
+    except Exception:  # noqa: BLE001
+        return message
